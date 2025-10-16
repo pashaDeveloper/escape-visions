@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-[50vh] w-full overflow-hidden">
       {/* Hero Slides */}
       {heroSlides.map((slide, index) => (
         <div
