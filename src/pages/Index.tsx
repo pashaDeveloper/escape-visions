@@ -9,7 +9,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <Hero />
-      <div className="relative z-10 mt-[50vh] bg-background rounded-t-[2rem] overflow-hidden">
+      <div className="relative z-10 mt-[calc(50vh-3rem)] bg-background rounded-t-[2rem] overflow-hidden">
         <TravelStories />
         <Destinations />
         <Footer />
