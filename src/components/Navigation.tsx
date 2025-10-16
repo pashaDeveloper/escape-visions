@@ -20,9 +20,9 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-white font-bold text-xl">W</span>
+              <span className="text-white font-bold text-xl">K</span>
             </div>
-            <span className="text-2xl font-bold text-foreground">Wanderlust</span>
+            <span className="text-2xl font-bold text-foreground">kuarmonia</span>
           </div>
 
           {/* Desktop Navigation */}

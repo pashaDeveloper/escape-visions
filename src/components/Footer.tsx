@@ -11,9 +11,9 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-xl">W</span>
+                <span className="text-white font-bold text-xl">K</span>
               </div>
-              <span className="text-2xl font-bold">Wanderlust</span>
+              <span className="text-2xl font-bold">kuarmonia</span>
             </div>
             <p className="text-white/70 mb-4">
               Your gateway to extraordinary travel experiences around the world.
@@ -92,7 +92,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span className="text-white/70">info@wanderlust.com</span>
+                <span className="text-white/70">info@kuarmonia.com</span>
               </li>
             </ul>
           </div>
@@ -119,7 +119,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/60 text-sm">
-            © 2024 Wanderlust. All rights reserved.
+            © 2024 kuarmonia. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-white/60 hover:text-white transition-smooth">
