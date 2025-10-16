@@ -9,9 +9,11 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <Hero />
-      <TravelStories />
-      <Destinations />
-      <Footer />
+      <div className="relative z-10 mt-[50vh]">
+        <TravelStories />
+        <Destinations />
+        <Footer />
+      </div>
     </div>
   );
 };

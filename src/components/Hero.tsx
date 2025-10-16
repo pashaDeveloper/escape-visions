@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="sticky top-0 h-[50vh] w-full overflow-hidden">
+    <section className="fixed top-0 left-0 right-0 h-[50vh] w-full overflow-hidden -z-10">
       {/* Hero Slides */}
       {heroSlides.map((slide, index) => (
         <div
