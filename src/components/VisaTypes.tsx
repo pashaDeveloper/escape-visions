@@ -1,5 +1,6 @@
-import { Plane, Briefcase, GraduationCap, Building2, Clock, Users } from "lucide-react";
+import { Plane, Briefcase, GraduationCap, Building2, Clock, Users, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const visaTypes = [
   {
@@ -8,7 +9,8 @@ const visaTypes = [
     nameFa: "ویزای توریستی",
     icon: Plane,
     applications: "1,245",
-    color: "from-blue-400 to-cyan-300",
+    image: "/lovable-uploads/visa-tourist.jpg",
+    description: "Explore the world's most beautiful destinations with our tourist visa services. Perfect for vacation and leisure travel.",
   },
   {
     id: 2,
@@ -16,7 +18,8 @@ const visaTypes = [
     nameFa: "ویزای تجاری",
     icon: Briefcase,
     applications: "892",
-    color: "from-purple-400 to-pink-300",
+    image: "/lovable-uploads/visa-business.jpg",
+    description: "Expand your business globally with our business visa solutions. Ideal for meetings, conferences, and professional trips.",
   },
   {
     id: 3,
@@ -24,7 +27,8 @@ const visaTypes = [
     nameFa: "ویزای تحصیلی",
     icon: GraduationCap,
     applications: "1,104",
-    color: "from-green-400 to-emerald-300",
+    image: "/lovable-uploads/visa-student.jpg",
+    description: "Pursue your academic dreams abroad with our student visa assistance. Complete support for educational opportunities worldwide.",
   },
   {
     id: 4,
@@ -32,7 +36,8 @@ const visaTypes = [
     nameFa: "ویزای کاری",
     icon: Building2,
     applications: "1,356",
-    color: "from-orange-400 to-amber-300",
+    image: "/lovable-uploads/visa-work.jpg",
+    description: "Build your career internationally with our work visa services. Professional guidance for employment opportunities abroad.",
   },
   {
     id: 5,
@@ -40,7 +45,8 @@ const visaTypes = [
     nameFa: "ویزای ترانزیت",
     icon: Clock,
     applications: "628",
-    color: "from-red-400 to-rose-300",
+    image: "/lovable-uploads/visa-transit.jpg",
+    description: "Smooth transit through multiple countries with our transit visa solutions. Quick and hassle-free processing.",
   },
   {
     id: 6,
@@ -48,7 +54,8 @@ const visaTypes = [
     nameFa: "ویزای خانوادگی",
     icon: Users,
     applications: "756",
-    color: "from-indigo-400 to-blue-300",
+    image: "/lovable-uploads/visa-family.jpg",
+    description: "Reunite with your loved ones through our family visa services. Comprehensive support for family reunification.",
   },
 ];
 
@@ -56,43 +63,64 @@ const VisaTypes = () => {
   return (
     <section className="py-12 bg-background">
       <div className="container mx-auto px-6">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Visa Types
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-lg">
             Choose the right visa for your journey
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {visaTypes.map((visa) => {
+        <div className="space-y-8">
+          {visaTypes.map((visa, index) => {
             const Icon = visa.icon;
+            const isEven = index % 2 === 0;
+            
             return (
               <Card
                 key={visa.id}
                 className="group cursor-pointer overflow-hidden border-0 shadow-card hover:shadow-elevated transition-smooth bg-card"
               >
-                <div className="relative aspect-[3/4] overflow-hidden">
-                  {/* Gradient Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${visa.color} opacity-90 group-hover:opacity-100 transition-smooth`} />
-                  
-                  {/* Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Icon className="w-16 h-16 text-white/90 group-hover:scale-110 transition-smooth" strokeWidth={1.5} />
+                <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-0`}>
+                  {/* Image Section */}
+                  <div className="relative w-full md:w-1/2 h-64 md:h-80 overflow-hidden">
+                    <img
+                      src={visa.image}
+                      alt={visa.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-smooth duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    
+                    {/* Icon Overlay */}
+                    <div className="absolute top-6 left-6 w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <Icon className="w-7 h-7 text-white" strokeWidth={2} />
+                    </div>
                   </div>
 
-                  {/* Decorative circles */}
-                  <div className="absolute top-4 right-4 w-20 h-20 rounded-full bg-white/10 blur-xl" />
-                  <div className="absolute bottom-4 left-4 w-16 h-16 rounded-full bg-white/10 blur-lg" />
-                  
-                  {/* Content Overlay */}
-                  <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                    <div className="text-white">
-                      <p className="text-xs opacity-80 mb-1">Visa Application</p>
-                      <h3 className="font-bold text-sm mb-1">{visa.name}</h3>
-                      <p className="text-xs opacity-90">{visa.applications} Applications</p>
+                  {/* Content Section */}
+                  <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-2 text-primary text-sm font-medium mb-3">
+                      <span>Visa Application</span>
+                      <span className="w-1 h-1 rounded-full bg-primary" />
+                      <span>{visa.applications} Applications</span>
                     </div>
+                    
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3 group-hover:text-primary transition-smooth">
+                      {visa.name}
+                    </h3>
+                    
+                    <p className="text-muted-foreground text-base md:text-lg mb-6 leading-relaxed">
+                      {visa.description}
+                    </p>
+                    
+                    <Button 
+                      variant="default" 
+                      className="w-fit gap-2 group/btn"
+                    >
+                      Learn More
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-smooth" />
+                    </Button>
                   </div>
                 </div>
               </Card>
