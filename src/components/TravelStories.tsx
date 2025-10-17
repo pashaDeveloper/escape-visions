@@ -13,18 +13,9 @@ const TravelStories = () => {
   const [activeStory, setActiveStory] = useState<number | null>(null);
 
   return (
-    <section className="py-16 bg-muted">
+    <section className="py-8 bg-muted">
       <div className="container mx-auto px-6">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-            Travel Stories
-          </h2>
-          <p className="text-muted-foreground">
-            Explore destinations through the eyes of travelers
-          </p>
-        </div>
-
-        <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+        <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin">
           {stories.map((story) => (
             <div
               key={story.id}
