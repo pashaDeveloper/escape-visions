@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const newsItems = [
   {
@@ -43,8 +45,21 @@ const News = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {newsItems.map((news) => (
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
+          className="w-full mb-8"
+        >
+          <CarouselContent className="-ml-4">
+            {newsItems.map((news) => (
+              <CarouselItem key={news.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
             <Card key={news.id} className="overflow-hidden group cursor-pointer hover:shadow-elevated transition-smooth">
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -81,9 +96,11 @@ const News = () => {
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </CardContent>
-            </Card>
-          ))}
-        </div>
+              </Card>
+            </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
         
         <div className="text-center">
           <Button variant="outline" size="lg" className="gap-2">

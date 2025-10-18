@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const popularVisas = [
   {
@@ -125,11 +127,26 @@ const PopularVisas = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {popularVisas.map((visa) => (
-            <PopularVisaCard key={visa.id} visa={visa} />
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 3500,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {popularVisas.map((visa) => (
+              <CarouselItem key={visa.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <PopularVisaCard visa={visa} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
 
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" className="rounded-full px-8">

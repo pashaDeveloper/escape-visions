@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Bed, ArrowRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const hotels = [
   {
@@ -82,8 +84,21 @@ const Hotels = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {hotels.map((hotel) => (
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+          className="w-full mb-8"
+        >
+          <CarouselContent className="-ml-4">
+            {hotels.map((hotel) => (
+              <CarouselItem key={hotel.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
             <Card key={hotel.id} className="overflow-hidden group cursor-pointer hover:shadow-elevated transition-smooth">
               <div className="relative h-56 overflow-hidden">
                 <img
@@ -125,9 +140,11 @@ const Hotels = () => {
                   </Button>
                 </div>
               </CardContent>
-            </Card>
-          ))}
-        </div>
+              </Card>
+            </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
         
         <div className="text-center">
           <Button variant="outline" size="lg" className="gap-2">

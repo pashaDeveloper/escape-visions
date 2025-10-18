@@ -1,4 +1,6 @@
 import DestinationCard from "./DestinationCard";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const destinations = [
   {
@@ -71,11 +73,26 @@ const Destinations = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {destinations.map((destination) => (
-            <DestinationCard key={destination.id} {...destination} />
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {destinations.map((destination) => (
+              <CarouselItem key={destination.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <DestinationCard {...destination} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
 
         <div className="text-center mt-12">
           <button className="text-primary font-semibold hover:text-primary-dark transition-smooth inline-flex items-center gap-2">
