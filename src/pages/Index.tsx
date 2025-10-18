@@ -4,6 +4,7 @@ import VisaTypes from "@/components/VisaTypes";
 import PopularVisas from "@/components/PopularVisas";
 import Hotels from "@/components/Hotels";
 import News from "@/components/News";
+import Articles from "@/components/Articles";
 import Destinations from "@/components/Destinations";
 import Footer from "@/components/Footer";
 
@@ -17,6 +18,7 @@ const Index = () => {
         <PopularVisas />
         <Hotels />
         <News />
+        <Articles />
         <Destinations />
         <Footer />
       </div>
