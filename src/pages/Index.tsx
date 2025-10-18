@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import VisaTypes from "@/components/VisaTypes";
 import PopularVisas from "@/components/PopularVisas";
 import Hotels from "@/components/Hotels";
+import News from "@/components/News";
 import Destinations from "@/components/Destinations";
 import Footer from "@/components/Footer";
 
@@ -15,6 +16,7 @@ const Index = () => {
         <VisaTypes />
         <PopularVisas />
         <Hotels />
+        <News />
         <Destinations />
         <Footer />
       </div>
