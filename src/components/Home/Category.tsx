@@ -83,7 +83,7 @@ function Category() {
           >
             <motion.div
               whileHover={{ rotate: 10 }}
-              className="w-16 h-16 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-500"
+              className="w-16 h-16 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-500"
             >
               <div className="flex items-center justify-center">
                 {category.icon}

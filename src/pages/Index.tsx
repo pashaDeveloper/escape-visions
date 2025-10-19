@@ -13,10 +13,11 @@ import Category from "@/components/Home/Category";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { updateMetaTags, defaultMetaData, englishMetaData } from "@/lib/metaUtils";
 
 const Index = () => {
   const location = useLocation();
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   useEffect(() => {
     // Detect language from URL path
@@ -28,6 +29,14 @@ const Index = () => {
       document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
       document.documentElement.lang = lang;
     }
+    
+    // Update meta tags based on current page and language
+    const metaData = lang === 'en' ? { ...englishMetaData } : { ...defaultMetaData };
+    
+    // You can customize meta data based on the current section
+    // For example, if you're on a specific visa page, you could update the meta data accordingly
+    
+    updateMetaTags(metaData);
   }, [location.pathname, i18n]);
 
   return (

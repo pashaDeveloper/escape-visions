@@ -182,6 +182,11 @@ const faTranslation = {
       "paris": "پاریس، فرانسه",
       "kualalumpur": "کوآلالامپور، مالزی"
     }
+  },
+  "notFound": {
+    "title": "صفحه یافت نشد",
+    "description": "صفحه‌ای که به دنبال آن هستید وجود ندارد.",
+    "backToHome": "بازگشت به خانه"
   }
 };
 
@@ -365,6 +370,11 @@ const enTranslation = {
       "paris": "Paris, France",
       "kualalumpur": "Kuala Lumpur, Malaysia"
     }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist.",
+    "backToHome": "Back to Home"
   }
 };
 
