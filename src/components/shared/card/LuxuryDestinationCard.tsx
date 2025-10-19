@@ -36,19 +36,7 @@ const LuxuryDestinationCard = ({ destination }: { destination: Destination }) =>
           </div>
           <p className="text-white/90 text-sm mb-3">{destination.description}</p>
           
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1.5 bg-yellow-500/90 backdrop-blur-sm px-3 py-1 rounded-full">
-              <Star className="w-3 h-3 fill-white text-white" />
-              <span className="text-xs font-bold text-white">{destination.rating}</span>
-            </div>
-            <Button 
-              size="sm" 
-              className="gap-2 bg-white/95 text-gray-900 hover:bg-white"
-            >
-              اطلاعات بیشتر
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          </div>
+        
         </div>
       </div>
       

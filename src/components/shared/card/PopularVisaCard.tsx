@@ -41,20 +41,7 @@ const PopularVisaCard = ({ visa }: { visa: Visa }) => {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-          <Clock className="w-4 h-4" />
-          <span>{visa.processingTime}</span>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div>
-            <span className="text-2xl font-bold text-primary">${visa.price}</span>
-            <span className="text-sm text-muted-foreground ml-1">/ نفر</span>
-          </div>
-          <Button className="bg-accent hover:bg-accent-hover rounded-full px-6">
-            درخواست ویزا
-          </Button>
-        </div>
+       
       </div>
     </div>
   );

@@ -46,16 +46,7 @@ const HotelCard = ({ hotel }: { hotel: Hotel }) => {
           <span className="text-sm">{hotel.rooms}</span>
         </div>
         
-        <div className="flex items-center justify-between pt-4 border-t">
-          <div>
-            <p className="text-sm text-muted-foreground">قیمت هر شب از</p>
-            <p className="text-xl font-bold">{hotel.price} تومان</p>
-          </div>
-          <Button size="sm" className="gap-2">
-            رزرو
-            <ArrowRight className="w-4 h-4" />
-          </Button>
-        </div>
+       
       </CardContent>
     </Card>
   );

@@ -63,15 +63,7 @@ const EventCard = ({ event }: { event: Event }) => {
         </div>
 
         {/* Price & Button */}
-        <div className="flex items-center justify-between pt-4 border-t border-white/20">
-          <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4" />
-            <span className="text-sm font-semibold">{event.priceRange}</span>
-          </div>
-          <button className="bg-primary hover:bg-primary/80 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105">
-            رزرو
-          </button>
-        </div>
+       
       </div>
     </div>
   );

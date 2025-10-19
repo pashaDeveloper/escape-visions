@@ -35,6 +35,61 @@ const magItems = [
     readTime: "۸ دقیقه",
     category: "مشاوره"
   },
+  // Added new items with existing images
+  {
+    id: 4,
+    title: "رازهای سفر ارزان به اروپا",
+    excerpt: "با رعایت نکات ساده این مقاله می‌توانید هزینه سفر خود به اروپا را تا ۵۰٪ کاهش دهید...",
+    image: "/lovable-uploads/story-1.jpg",
+    date: "۲۸ آذر ۱۴۰۳",
+    readTime: "۶ دقیقه",
+    category: "سفر ارزان"
+  },
+  {
+    id: 5,
+    title: "جدیدترین تغییرات ویزای شنگن",
+    excerpt: "از تغییرات جدید قوانین ویزای شنگن در سال ۲۰۲۵ باخبر شوید و برای سفر خود آماده شوید...",
+    image: "/lovable-uploads/story-3.jpg",
+    date: "۲۵ آذر ۱۴۰۳",
+    readTime: "۵ دقیقه",
+    category: "ویزای اروپا"
+  },
+  {
+    id: 6,
+    title: "معرفی هتل‌های لوکس جهان",
+    excerpt: "معرفی ۱۰ هتل لوکس جهان که تجربه اقامت در آن‌ها را فراموش نخواهید کرد...",
+    image: "/lovable-uploads/story-5.jpg",
+    date: "۲۰ آذر ۱۴۰۳",
+    readTime: "۹ دقیقه",
+    category: "هتل‌های لوکس"
+  },
+  {
+    id: 7,
+    title: "غذاهای محلی در سفرهای بین‌المللی",
+    excerpt: "تجربه غذاهای محلی یکی از بهترین بخش‌های هر سفر است. با ما بیشتر بخوانید...",
+    image: "/lovable-uploads/hero-1.jpg",
+    date: "۱۵ آذر ۱۴۰۳",
+    readTime: "۴ دقیقه",
+    category: "غذا و فرهنگ"
+  },
+  {
+    id: 8,
+    title: "راهنمای ویزای دیجیتال نومادها",
+    excerpt: "کشورهایی که ویزای دیجیتال برای نومادهای جهانی ارائه می‌دهند و نحوه دریافت آن...",
+    image: "/lovable-uploads/hero-2.jpg",
+    date: "۱۰ آذر ۱۴۰۳",
+    readTime: "۵ دقیقه",
+    category: "نومادها"
+  },
+  {
+    id: 9,
+    title: "مقاصد گردشگری پنهان آسیا",
+    excerpt: "کشف مقاصد گردشگری کمتر شناخته شده در آسیا که تجربه‌ای منحصربه‌فرد ارائه می‌دهند...",
+    image: "/lovable-uploads/hero-3.jpg",
+    date: "۵ آذر ۱۴۰۳",
+    readTime: "۶ دقیقه",
+    category: "آسیا"
+  },
 ];
 
 const Mag = () => {
@@ -60,7 +115,7 @@ const Mag = () => {
               slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 3,
+              slidesPerView: 4,
             },
           }}
           className="py-4 mb-8"

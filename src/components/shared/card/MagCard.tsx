@@ -37,7 +37,7 @@ const MagCard = ({ mag }: { mag: MagItem }) => {
           </div>
         </div>
         
-        <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+        <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors truncate">
           {mag.title}
         </h3>
         

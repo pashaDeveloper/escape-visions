@@ -46,20 +46,7 @@ const DestinationCard = ({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-          <Calendar className="w-4 h-4" />
-          <span>{duration}</span>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div>
-            <span className="text-2xl font-bold text-primary">${price}</span>
-            <span className="text-sm text-muted-foreground ml-1">/ person</span>
-          </div>
-          <Button className="bg-accent hover:bg-accent-hover rounded-full px-6">
-            Book Now
-          </Button>
-        </div>
+       
       </div>
     </div>
   );
