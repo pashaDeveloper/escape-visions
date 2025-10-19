@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,8 +9,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from 'react-i18next';
 
 const Navigation = () => {
+  const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -31,32 +34,32 @@ const Navigation = () => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent">
-                    Destinations
+                    {t('navigation.destinations')}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-6 w-[500px] grid-cols-2">
                       <NavigationMenuLink className="block select-none space-y-1 rounded-lg p-3 hover:bg-muted transition-smooth">
-                        <div className="text-sm font-medium leading-none">Europe</div>
+                        <div className="text-sm font-medium leading-none">{t('navigation.europe')}</div>
                         <p className="text-sm text-muted-foreground">
-                          Explore historic cities and culture
+                          {t('navigation.europeDesc')}
                         </p>
                       </NavigationMenuLink>
                       <NavigationMenuLink className="block select-none space-y-1 rounded-lg p-3 hover:bg-muted transition-smooth">
-                        <div className="text-sm font-medium leading-none">Asia</div>
+                        <div className="text-sm font-medium leading-none">{t('navigation.asia')}</div>
                         <p className="text-sm text-muted-foreground">
-                          Discover exotic landscapes
+                          {t('navigation.asiaDesc')}
                         </p>
                       </NavigationMenuLink>
                       <NavigationMenuLink className="block select-none space-y-1 rounded-lg p-3 hover:bg-muted transition-smooth">
-                        <div className="text-sm font-medium leading-none">Americas</div>
+                        <div className="text-sm font-medium leading-none">{t('navigation.americas')}</div>
                         <p className="text-sm text-muted-foreground">
-                          Adventure awaits in the New World
+                          {t('navigation.americasDesc')}
                         </p>
                       </NavigationMenuLink>
                       <NavigationMenuLink className="block select-none space-y-1 rounded-lg p-3 hover:bg-muted transition-smooth">
-                        <div className="text-sm font-medium leading-none">Africa</div>
+                        <div className="text-sm font-medium leading-none">{t('navigation.africa')}</div>
                         <p className="text-sm text-muted-foreground">
-                          Safari and natural wonders
+                          {t('navigation.africaDesc')}
                         </p>
                       </NavigationMenuLink>
                     </div>
@@ -66,30 +69,26 @@ const Navigation = () => {
             </NavigationMenu>
 
             <a href="#tours" className="text-foreground hover:text-primary transition-smooth font-medium">
-              Tours
+              {t('navigation.tours')}
             </a>
             <a href="#experiences" className="text-foreground hover:text-primary transition-smooth font-medium">
-              Experiences
+              {t('navigation.experiences')}
             </a>
             <a href="#about" className="text-foreground hover:text-primary transition-smooth font-medium">
-              About
+              {t('navigation.about')}
             </a>
             <a href="#contact" className="text-foreground hover:text-primary transition-smooth font-medium">
-              Contact
+              {t('navigation.contact')}
             </a>
           </div>
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="gap-2">
-              <Globe className="w-4 h-4" />
-              <span>EN</span>
-              <ChevronDown className="w-3 h-3" />
-            </Button>
+            <LanguageSwitcher />
             <Button
               className="bg-accent hover:bg-accent-hover text-accent-foreground transition-smooth rounded-full px-6"
             >
-              Book Now
+              {t('navigation.bookNow')}
             </Button>
           </div>
 
@@ -107,23 +106,26 @@ const Navigation = () => {
           <div className="lg:hidden mt-4 pb-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
               <a href="#destinations" className="text-foreground hover:text-primary transition-smooth font-medium">
-                Destinations
+                {t('navigation.destinations')}
               </a>
               <a href="#tours" className="text-foreground hover:text-primary transition-smooth font-medium">
-                Tours
+                {t('navigation.tours')}
               </a>
               <a href="#experiences" className="text-foreground hover:text-primary transition-smooth font-medium">
-                Experiences
+                {t('navigation.experiences')}
               </a>
               <a href="#about" className="text-foreground hover:text-primary transition-smooth font-medium">
-                About
+                {t('navigation.about')}
               </a>
               <a href="#contact" className="text-foreground hover:text-primary transition-smooth font-medium">
-                Contact
+                {t('navigation.contact')}
               </a>
-              <Button className="bg-accent hover:bg-accent-hover text-accent-foreground w-full rounded-full">
-                Book Now
-              </Button>
+              <div className="flex items-center space-x-2">
+                <LanguageSwitcher />
+                <Button className="bg-accent hover:bg-accent-hover text-accent-foreground w-full rounded-full">
+                  {t('navigation.bookNow')}
+                </Button>
+              </div>
             </div>
           </div>
         )}

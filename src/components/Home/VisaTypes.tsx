@@ -4,119 +4,123 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import SectionHeader from "@/components/Home/SectionHeader";
+import { useTranslation } from 'react-i18next';
 
-const visaTypes = [
+const getVisaTypes = (t: any) => [
   {
     id: 1,
-    name: "Tourist Visa",
+    name: t('visaTypes.tourist'),
     icon: <Plane className="w-6 h-6" />,
     image: "/lovable-uploads/visa-tourist.jpg",
   },
   {
     id: 2,
-    name: "Business Visa",
+    name: t('visaTypes.business'),
     icon: <Briefcase className="w-6 h-6" />,
     image: "/lovable-uploads/visa-business.jpg",
   },
   {
     id: 3,
-    name: "Student Visa",
+    name: t('visaTypes.student'),
     icon: <GraduationCap className="w-6 h-6" />,
     image: "/lovable-uploads/visa-student.jpg",
   },
   {
     id: 4,
-    name: "Work Visa",
+    name: t('visaTypes.work'),
     icon: <Building2 className="w-6 h-6" />,
     image: "/lovable-uploads/visa-work.jpg",
   },
   {
     id: 5,
-    name: "Transit Visa",
+    name: t('visaTypes.transit'),
     icon: <Clock className="w-6 h-6" />,
     image: "/lovable-uploads/visa-transit.jpg",
   },
   {
     id: 6,
-    name: "Family Visa",
+    name: t('visaTypes.family'),
     icon: <Users className="w-6 h-6" />,
     image: "/lovable-uploads/visa-family.jpg",
   },
   {
     id: 7,
-    name: "Marriage Visa",
+    name: t('visaTypes.marriage'),
     icon: <Heart className="w-6 h-6" />,
     image: "/lovable-uploads/visa-family.jpg",
   },
   {
     id: 8,
-    name: "Investment Visa",
+    name: t('visaTypes.investment'),
     icon: <Trophy className="w-6 h-6" />,
     image: "/lovable-uploads/visa-business.jpg",
   },
   {
     id: 9,
-    name: "Retirement Visa",
+    name: t('visaTypes.retirement'),
     icon: <Home className="w-6 h-6" />,
     image: "/lovable-uploads/visa-tourist.jpg",
   },
   {
     id: 10,
-    name: "Medical Visa",
+    name: t('visaTypes.medical'),
     icon: <Heart className="w-6 h-6" />,
     image: "/lovable-uploads/visa-tourist.jpg",
   },
   {
     id: 11,
-    name: "Diplomatic Visa",
+    name: t('visaTypes.diplomatic'),
     icon: <Star className="w-6 h-6" />,
     image: "/lovable-uploads/visa-business.jpg",
   },
   {
     id: 12,
-    name: "Journalist Visa",
+    name: t('visaTypes.journalist'),
     icon: <Camera className="w-6 h-6" />,
     image: "/lovable-uploads/visa-tourist.jpg",
   },
   {
     id: 13,
-    name: "Cultural Visa",
+    name: t('visaTypes.cultural'),
     icon: <Star className="w-6 h-6" />,
     image: "/lovable-uploads/visa-tourist.jpg",
   },
   {
     id: 14,
-    name: "Sport Visa",
+    name: t('visaTypes.sport'),
     icon: <Trophy className="w-6 h-6" />,
     image: "/lovable-uploads/visa-tourist.jpg",
   },
   {
     id: 15,
-    name: "Shopping Visa",
+    name: t('visaTypes.shopping'),
     icon: <ShoppingCart className="w-6 h-6" />,
     image: "/lovable-uploads/visa-tourist.jpg",
   },
   {
     id: 16,
-    name: "Cruise Visa",
+    name: t('visaTypes.cruise'),
     icon: <Anchor className="w-6 h-6" />,
     image: "/lovable-uploads/visa-tourist.jpg",
   },
   {
     id: 17,
-    name: "Artist Visa",
+    name: t('visaTypes.artist'),
     icon: <Music className="w-6 h-6" />,
     image: "/lovable-uploads/visa-tourist.jpg",
   },
   {
     id: 18,
-    name: "Religious Visa",
+    name: t('visaTypes.religious'),
     icon: <Star className="w-6 h-6" />,
     image: "/lovable-uploads/visa-tourist.jpg",
   },
 ];
 
 const VisaTypes = () => {
+  const { t } = useTranslation();
+  const visaTypes = getVisaTypes(t);
+
   return (
     <section className="py-8">
       <div className="container mx-auto px-2">

@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "slides": {
+      "wedding": {
+        "title": "Make Your Special Day Unforgettable",
+        "subtitle": "Luxury halls for your wedding and ceremonies",
+        "location": "Wedding Hall"
+      },
+      "destination": {
+        "title": "Journey to Paradise on Earth",
+        "subtitle": "Beautiful islands with overwater accommodations",
+        "location": "Maldives"
+      },
+      "yacht": {
+        "title": "Experience Luxury Yachting",
+        "subtitle": "Seascape views and delicious food",
+        "location": "Luxury Yacht"
+      },
+      "hotel": {
+        "title": "Stay at Luxury Hotels",
+        "subtitle": "Comfort and relaxation at the world's best hotels",
+        "location": "5-Star Hotel"
+      },
+      "realEstate": {
+        "title": "Your Dream Home",
+        "subtitle": "Villas and private homes in the best destinations",
+        "location": "Private Accommodation"
+      },
+      "visa": {
+        "title": "Get Your Travel Visa",
+        "subtitle": "Easy and fast process for all countries",
+        "location": "Visa Services"
+      }
+    },
+    "dynamicContent": {
+      "wedding": {
+        "mainTitle": "Make Your Special Day Unforgettable",
+        "subTitle": "Luxury halls for your wedding and ceremonies"
+      },
+      "destination": {
+        "mainTitle": "Discover the Best Travel Destinations",
+        "subTitle": "Explore the world's tourist destinations"
+      },
+      "yacht": {
+        "mainTitle": "Experience Luxury Yachting",
+        "subTitle": "Memorable sea journeys"
+      },
+      "hotel": {
+        "mainTitle": "Stay at Luxury Hotels",
+        "subTitle": "Comfort and relaxation at the best hotels"
+      },
+      "realEstate": {
+        "mainTitle": "Your Dream Home",
+        "subTitle": "Buying and renting the best properties"
+      },
+      "visa": {
+        "mainTitle": "Get Your Travel Visa",
+        "subTitle": "Fast and reliable visa services"
+      },
+      "default": {
+        "mainTitle": "Discover the Best Travel Destinations",
+        "subTitle": "Wedding halls, recreational yachts, luxury hotels and private accommodations"
+      }
+    },
+    "searchPlaceholder": "Where do you want to go?",
+    "searchButton": "Search"
+  }
+}

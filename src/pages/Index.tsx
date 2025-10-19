@@ -10,8 +10,26 @@ import Mag from "@/components/Home/Mag";
 import Destinations from "@/components/Home/Destinations";
 import Footer from "@/components/Home/Footer";
 import Category from "@/components/Home/Category";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Index = () => {
+  const location = useLocation();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    // Detect language from URL path
+    const pathParts = location.pathname.split('/').filter(part => part !== '');
+    const lang = pathParts[0] === 'en' ? 'en' : 'fa';
+    
+    if (i18n.language !== lang) {
+      i18n.changeLanguage(lang);
+      document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+    }
+  }, [location.pathname, i18n]);
+
   return (
     <div className="min-h-screen">
       <Navigation />

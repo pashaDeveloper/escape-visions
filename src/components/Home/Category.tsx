@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FileText, Building, Key, Heart, Plane, MapPin, Calendar, Users } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 interface CategoryItem {
   id: number;
@@ -12,55 +13,57 @@ interface CategoryItem {
 }
 
 function Category() {
+  const { t } = useTranslation();
+  
   // تعریف دسته‌بندی‌ها با آیکون‌های مناسب
   const categories: CategoryItem[] = [
     { 
       id: 1, 
-      name: "ویزا", 
+      name: t('categories.visa'), 
       icon: <FileText className="!w-12 !h-12 text-primary dark:text-primary stroke-[1]" />,
-      description: "انواع ویزاهای توریستی، کاری و تحصیلی"
+      description: t('categories.visaDesc')
     },
     { 
       id: 2, 
-      name: "هتل", 
+      name: t('categories.hotel'), 
       icon: <Building className="!w-12 !h-12 text-primary dark:text-primary stroke-[1]" />,
-      description: "رزرو هتل‌های لوکس و اقتصادی"
+      description: t('categories.hotelDesc')
     },
     { 
       id: 3, 
-      name: "مسکن", 
+      name: t('categories.housing'), 
       icon: <Key className="!w-12 !h-12 text-primary dark:text-primary stroke-[1]" />,
-      description: "خرید و اجاره ملک در کشورهای مقصد"
+      description: t('categories.housingDesc')
     },
     { 
       id: 4, 
-      name: "ازدواج", 
+      name: t('categories.marriage'), 
       icon: <Heart className="!w-12 !h-12 text-primary dark:text-primary stroke-[1]" />,
-      description: "برگزاری مراسم ازدواج در کشورهای مقصد"
+      description: t('categories.marriageDesc')
     },
     { 
       id: 5, 
-      name: "مراسمات", 
+      name: t('categories.ceremonies'), 
       icon: <Calendar className="!w-12 !h-12 text-primary dark:text-primary stroke-[1]" />,
-      description: "سازماندهی مراسمات خاص و تشریفات"
+      description: t('categories.ceremoniesDesc')
     },
     { 
       id: 6, 
-      name: "تور", 
+      name: t('categories.tours'), 
       icon: <MapPin className="!w-12 !h-12 text-primary dark:text-primary stroke-[1]" />,
-      description: "تورهای تخصصی و سفرهای گروهی"
+      description: t('categories.toursDesc')
     },
     { 
       id: 7, 
-      name: "مهاجرت", 
+      name: t('categories.immigration'), 
       icon: <Plane className="!w-12 !h-12 text-primary dark:text-primary stroke-[1]" />,
-      description: "فرصت‌های مهاجرت و اخذ تابعیت"
+      description: t('categories.immigrationDesc')
     },
     { 
       id: 8, 
-      name: "خدمات", 
+      name: t('categories.services'), 
       icon: <Users className="!w-12 !h-12 text-primary dark:text-primary stroke-[1]" />,
-      description: "مشاوره و خدمات پس از سفر"
+      description: t('categories.servicesDesc')
     },
   ];
 

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Clock } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 interface Visa {
   id: number;
@@ -13,6 +14,8 @@ interface Visa {
 }
 
 const PopularVisaCard = ({ visa }: { visa: Visa }) => {
+  const { t } = useTranslation();
+  
   return (
     <div className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-smooth cursor-pointer">
       <div className="relative h-64 overflow-hidden">
@@ -41,7 +44,17 @@ const PopularVisaCard = ({ visa }: { visa: Visa }) => {
           </div>
         </div>
 
-       
+        <div className="space-y-3">
+          <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center gap-1 text-muted-foreground">
+              <Clock className="w-4 h-4" />
+              <span>{t('popularVisas.processingTime')}</span>
+            </div>
+            <span className="font-medium">{visa.processingTime}</span>
+          </div>
+          
+      
+        </div>
       </div>
     </div>
   );

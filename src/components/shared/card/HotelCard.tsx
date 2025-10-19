@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Bed, ArrowRight } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 interface Hotel {
   id: number;
@@ -15,6 +16,8 @@ interface Hotel {
 }
 
 const HotelCard = ({ hotel }: { hotel: Hotel }) => {
+  const { t } = useTranslation();
+  
   return (
     <Card className="overflow-hidden group cursor-pointer hover:shadow-elevated transition-smooth">
       <div className="relative h-56 overflow-hidden">
@@ -46,7 +49,7 @@ const HotelCard = ({ hotel }: { hotel: Hotel }) => {
           <span className="text-sm">{hotel.rooms}</span>
         </div>
         
-       
+      
       </CardContent>
     </Card>
   );

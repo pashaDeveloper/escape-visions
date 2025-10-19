@@ -6,83 +6,87 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import SectionHeader from "@/components/Home/SectionHeader";
 import HotelCard from "@/components/shared/card/HotelCard";
+import { useTranslation } from 'react-i18next';
 
-const hotels = [
+const getHotels = (t: any) => [
   {
     id: 1,
-    type: "لوکس",
-    name: "هتل 5 ستاره",
-    location: "دبی، امارات",
+    type: t('hotels.types.luxury'),
+    name: t('hotels.names.luxury'),
+    location: t('hotels.locations.dubai'),
     rating: 4.9,
     reviews: 1250,
     price: "۱,۵۰۰,۰۰۰",
-    rooms: "۲۵ اتاق موجود",
+    rooms: t('hotels.rooms', { count: 25 }),
     image: "/lovable-uploads/hotel-luxury.jpg",
   },
   {
     id: 2,
-    type: "بیزنس",
-    name: "هتل کسب و کار",
-    location: "استانبول، ترکیه",
+    type: t('hotels.types.business'),
+    name: t('hotels.names.business'),
+    location: t('hotels.locations.istanbul'),
     rating: 4.7,
     reviews: 890,
     price: "۸۵۰,۰۰۰",
-    rooms: "۳۲ اتاق موجود",
+    rooms: t('hotels.rooms', { count: 32 }),
     image: "/lovable-uploads/hotel-business.jpg",
   },
   {
     id: 3,
-    type: "ریزورت",
-    name: "ریزورت ساحلی",
-    location: "آنتالیا، ترکیه",
+    type: t('hotels.types.resort'),
+    name: t('hotels.names.resort'),
+    location: t('hotels.locations.antalya'),
     rating: 4.8,
     reviews: 1100,
     price: "۱,۲۰۰,۰۰۰",
-    rooms: "۱۸ اتاق موجود",
+    rooms: t('hotels.rooms', { count: 18 }),
     image: "/lovable-uploads/hotel-resort.jpg",
   },
   {
     id: 4,
-    type: "اقتصادی",
-    name: "هتل مقرون به صرفه",
-    location: "تهران، ایران",
+    type: t('hotels.types.budget'),
+    name: t('hotels.names.budget'),
+    location: t('hotels.locations.tehran'),
     rating: 4.5,
     reviews: 650,
     price: "۳۵۰,۰۰۰",
-    rooms: "۴۵ اتاق موجود",
+    rooms: t('hotels.rooms', { count: 45 }),
     image: "/lovable-uploads/hotel-budget.jpg",
   },
   {
     id: 5,
-    type: "بوتیک",
-    name: "هتل بوتیک",
-    location: "پاریس، فرانسه",
+    type: t('hotels.types.boutique'),
+    name: t('hotels.names.boutique'),
+    location: t('hotels.locations.paris'),
     rating: 4.9,
     reviews: 780,
     price: "۱,۸۰۰,۰۰۰",
-    rooms: "۱۲ اتاق موجود",
+    rooms: t('hotels.rooms', { count: 12 }),
     image: "/lovable-uploads/hotel-boutique.jpg",
   },
   {
     id: 6,
-    type: "خانوادگی",
-    name: "هتل خانوادگی",
-    location: "کوآلالامپور، مالزی",
+    type: t('hotels.types.family'),
+    name: t('hotels.names.family'),
+    location: t('hotels.locations.kualalumpur'),
     rating: 4.6,
     reviews: 920,
     price: "۶۵۰,۰۰۰",
-    rooms: "۲۸ اتاق موجود",
+    rooms: t('hotels.rooms', { count: 28 }),
     image: "/lovable-uploads/hotel-family.jpg",
   },
 ];
 
 const Hotels = () => {
+  const { t } = useTranslation();
+  const hotels = getHotels(t);
+  
   return (
     <section className="py-16">
       <div className="container mx-auto px-6">
         <SectionHeader 
-          title="انواع هتل برای رزرو"
-          subtitle="بهترین هتل‌ها را برای اقامت خود انتخاب کنید"
+          title={t('hotels.title')}
+          subtitle={t('hotels.subtitle')}
         />
         
         <Swiper
@@ -113,7 +117,7 @@ const Hotels = () => {
         
         <div className="text-center">
           <Button variant="outline" size="lg" className="gap-2">
-            مشاهده همه هتل‌ها
+            {t('hotels.viewAllButton')}
             <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
