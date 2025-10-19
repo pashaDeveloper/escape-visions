@@ -1,7 +1,9 @@
-import DestinationCard from "./DestinationCard";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import SectionHeader from "@/components/SectionHeader";
+import DestinationCard from "@/components/shared/card/DestinationCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
+import SectionHeader from "@/components/Home/SectionHeader";
 
 const destinations = [
   {
@@ -69,26 +71,31 @@ const Destinations = () => {
           subtitle="Handpicked destinations for unforgettable experiences. From pristine beaches to mountain peaks, your next adventure starts here."
         />
 
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={16}
+          slidesPerView={1}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
           }}
-          plugins={[
-            Autoplay({
-              delay: 4000,
-            }),
-          ]}
-          className="w-full"
+          loop={true}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+          className="py-4"
         >
-          <CarouselContent className="-ml-4">
-            {destinations.map((destination) => (
-              <CarouselItem key={destination.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <DestinationCard {...destination} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+          {destinations.map((destination) => (
+            <SwiperSlide key={destination.id}>
+              <DestinationCard {...destination} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
         <div className="text-center mt-12">
           <button className="text-primary font-semibold hover:text-primary-dark transition-smooth inline-flex items-center gap-2">
