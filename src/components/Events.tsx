@@ -138,7 +138,7 @@ const Events = () => {
         >
           <CarouselContent className="-ml-4">
             {events.map((event) => (
-              <CarouselItem key={event.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={event.id} className="pl-4 basis-[85%] sm:basis-[70%] md:basis-[45%] lg:basis-[32%] xl:basis-[30%]">
                 <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-[450px] cursor-pointer">
                   {/* Background Image with Parallax Effect */}
                   <div className="absolute inset-0 overflow-hidden">
