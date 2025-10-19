@@ -76,8 +76,31 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply text-foreground antialiased;
     font-feature-settings: "cv11", "ss01";
+    background: #ffffff;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, hsl(200 85% 85% / 0.15), transparent 40%),
+      radial-gradient(circle at 80% 20%, hsl(40 35% 88% / 0.12), transparent 35%),
+      radial-gradient(circle at 50% 80%, hsl(200 85% 90% / 0.1), transparent 45%),
+      radial-gradient(circle at 90% 70%, hsl(40 35% 85% / 0.08), transparent 30%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  body > * {
+    position: relative;
+    z-index: 1;
   }
   
   html {
@@ -134,26 +157,6 @@ All colors MUST be HSL.
   
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--primary) / 0.5);
-  }
-  
-  .section-glow {
-    position: relative;
-    background: var(--gradient-background);
-    overflow: hidden;
-  }
-  
-  .section-glow::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-glow);
-    pointer-events: none;
-    z-index: 0;
-  }
-  
-  .section-glow > * {
-    position: relative;
-    z-index: 1;
   }
   
   .animated-underline {

@@ -117,7 +117,7 @@ const PopularVisaCard = ({ visa }: { visa: typeof popularVisas[0] }) => {
 
 const PopularVisas = () => {
   return (
-    <section className="py-16 section-glow">
+    <section className="py-16">
       <div className="container mx-auto px-6">
         <SectionHeader 
           title="ویزاهای پرطرفدار"

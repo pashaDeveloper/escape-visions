@@ -62,7 +62,7 @@ const destinations = [
 
 const Destinations = () => {
   return (
-    <section className="py-20 section-glow">
+    <section className="py-20">
       <div className="container mx-auto px-6">
         <SectionHeader 
           title="Top Destinations"

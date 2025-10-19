@@ -113,7 +113,7 @@ const Events = () => {
   ];
 
   return (
-    <section className="py-16 section-glow">
+    <section className="py-16">
       <div className="container mx-auto px-4">
         <SectionHeader 
           title="برگزاری مراسمات لوکس"

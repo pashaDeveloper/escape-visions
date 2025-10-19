@@ -38,7 +38,7 @@ const visaTypes = [
 
 const VisaTypes = () => {
   return (
-    <section className="py-8 section-glow">
+    <section className="py-8">
       <div className="container mx-auto px-6">
         <SectionHeader 
           title="انواع ویزا"
