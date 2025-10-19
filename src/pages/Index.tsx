@@ -4,6 +4,7 @@ import VisaTypes from "@/components/VisaTypes";
 import PopularVisas from "@/components/PopularVisas";
 import Hotels from "@/components/Hotels";
 import LuxuryDestinations from "@/components/LuxuryDestinations";
+import Events from "@/components/Events";
 import News from "@/components/News";
 import Articles from "@/components/Articles";
 import Destinations from "@/components/Destinations";
@@ -19,6 +20,7 @@ const Index = () => {
         <PopularVisas />
         <Hotels />
         <LuxuryDestinations />
+        <Events />
         <News />
         <Articles />
         <Destinations />
