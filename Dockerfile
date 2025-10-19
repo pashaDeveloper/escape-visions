@@ -1,43 +1,26 @@
-# Multi-stage Dockerfile for React application
+# Use Node.js 20 as the base image (latest LTS)
+FROM node:20-alpine
 
-# Stage 1: Build the application
-FROM node:18-alpine AS builder
-
-# Set working directory
+# Set the working directory
 WORKDIR /app
 
-# Copy package files
+# Copy package.json and package-lock.json (if available)
 COPY package*.json ./
 
-# Install all dependencies (including dev dependencies needed for build)
+# Install all dependencies
 RUN npm ci
 
-# Copy all source code
+# Copy the rest of the application code
 COPY . .
 
 # Build the application
 RUN npm run build
 
-# Stage 2: Production image
-FROM node:18-alpine AS production
-
-# Set working directory
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install only production dependencies
-RUN npm ci --only=production
-
-# Copy built files from builder stage
-COPY --from=builder /app/dist ./dist
-
-# Install a simple HTTP server to serve the static files
+# Install serve to serve the static files
 RUN npm install -g serve
 
-# Expose port
+# Expose the port the app runs on
 EXPOSE 8080
 
-# Start the server
-CMD ["serve", "-s", "dist", "-l", "8080"]
+# Start the application
+CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "8080"]
