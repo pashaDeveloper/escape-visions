@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Star, MapPin, Clock, ArrowRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import SectionHeader from "@/components/SectionHeader";
 
 const popularVisas = [
   {
@@ -116,16 +117,12 @@ const PopularVisaCard = ({ visa }: { visa: typeof popularVisas[0] }) => {
 
 const PopularVisas = () => {
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16 section-glow">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            ویزاهای پرطرفدار
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            بهترین فرصت‌ها برای دریافت ویزا به کشورهای محبوب
-          </p>
-        </div>
+        <SectionHeader 
+          title="ویزاهای پرطرفدار"
+          subtitle="بهترین فرصت‌ها برای دریافت ویزا به کشورهای محبوب"
+        />
 
         <Carousel
           opts={{

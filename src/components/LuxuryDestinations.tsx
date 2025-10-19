@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Star, ArrowRight, Sparkles } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import SectionHeader from "@/components/SectionHeader";
 
 const destinations = [
   {
@@ -63,17 +64,12 @@ const destinations = [
 
 const LuxuryDestinations = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-16 section-glow">
       <div className="container mx-auto px-6">
-        <div className="mb-12 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Sparkles className="w-8 h-8 text-primary" />
-            <h2 className="text-4xl font-bold">مکان‌های گردشگری و شهرک‌های لاکچری</h2>
-          </div>
-          <p className="text-muted-foreground text-lg">
-            لوکس‌ترین مقاصد سفر و اقامتگاه‌های پنج ستاره دنیا
-          </p>
-        </div>
+        <SectionHeader 
+          title="مکان‌های گردشگری و شهرک‌های لاکچری"
+          subtitle="لوکس‌ترین مقاصد سفر و اقامتگاه‌های پنج ستاره دنیا"
+        />
         
         <Carousel
           opts={{

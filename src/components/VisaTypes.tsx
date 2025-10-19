@@ -1,6 +1,7 @@
 import { Plane, Briefcase, GraduationCap, Building2, Clock, Users } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import SectionHeader from "@/components/SectionHeader";
 
 const visaTypes = [
   {
@@ -37,8 +38,13 @@ const visaTypes = [
 
 const VisaTypes = () => {
   return (
-    <section className="py-8 bg-background">
+    <section className="py-8 section-glow">
       <div className="container mx-auto px-6">
+        <SectionHeader 
+          title="انواع ویزا"
+          subtitle="خدمات ویزای متنوع برای تمامی نیازهای سفر شما"
+          align="center"
+        />
         <Carousel
           opts={{
             align: "start",

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Star, MapPin, Bed, ArrowRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import SectionHeader from "@/components/SectionHeader";
 
 const hotels = [
   {
@@ -75,14 +76,12 @@ const hotels = [
 
 const Hotels = () => {
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16 section-glow">
       <div className="container mx-auto px-6">
-        <div className="mb-12 text-center">
-          <h2 className="text-4xl font-bold mb-4">انواع هتل برای رزرو</h2>
-          <p className="text-muted-foreground text-lg">
-            بهترین هتل‌ها را برای اقامت خود انتخاب کنید
-          </p>
-        </div>
+        <SectionHeader 
+          title="انواع هتل برای رزرو"
+          subtitle="بهترین هتل‌ها را برای اقامت خود انتخاب کنید"
+        />
         
         <Carousel
           opts={{

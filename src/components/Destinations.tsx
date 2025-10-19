@@ -1,6 +1,7 @@
 import DestinationCard from "./DestinationCard";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import SectionHeader from "@/components/SectionHeader";
 
 const destinations = [
   {
@@ -61,17 +62,12 @@ const destinations = [
 
 const Destinations = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 section-glow">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Top Destinations
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Handpicked destinations for unforgettable experiences. From pristine beaches to
-            mountain peaks, your next adventure starts here.
-          </p>
-        </div>
+        <SectionHeader 
+          title="Top Destinations"
+          subtitle="Handpicked destinations for unforgettable experiences. From pristine beaches to mountain peaks, your next adventure starts here."
+        />
 
         <Carousel
           opts={{

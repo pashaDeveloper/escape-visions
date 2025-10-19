@@ -6,6 +6,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import SectionHeader from "@/components/SectionHeader";
 
 const Events = () => {
   const events = [
@@ -112,16 +113,12 @@ const Events = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background via-secondary/20 to-background">
+    <section className="py-16 section-glow">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            برگزاری مراسمات لوکس
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            تالارها، باغ‌های لوکس و کشتی‌های تفریحی برای برگزاری بهترین مراسمات شما
-          </p>
-        </div>
+        <SectionHeader 
+          title="برگزاری مراسمات لوکس"
+          subtitle="تالارها، باغ‌های لوکس و کشتی‌های تفریحی برای برگزاری بهترین مراسمات شما"
+        />
 
         <Carousel
           opts={{

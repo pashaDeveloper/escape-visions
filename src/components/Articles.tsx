@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import SectionHeader from "@/components/SectionHeader";
 
 const articles = [
   {
@@ -36,14 +37,12 @@ const articles = [
 
 const Articles = () => {
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16 section-glow">
       <div className="container mx-auto px-6">
-        <div className="mb-12 text-center">
-          <h2 className="text-4xl font-bold mb-4">از ما بخوانید</h2>
-          <p className="text-muted-foreground text-lg">
-            راهنماها و مقالات تخصصی برای سفر بهتر
-          </p>
-        </div>
+        <SectionHeader 
+          title="از ما بخوانید"
+          subtitle="راهنماها و مقالات تخصصی برای سفر بهتر"
+        />
         
         <Carousel
           opts={{
